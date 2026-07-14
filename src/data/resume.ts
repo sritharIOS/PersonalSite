@@ -76,7 +76,7 @@ export const profile: Profile = {
   name: 'Srithar Rajendran',
   title: 'Full Stack Staff Software Engineer',
   subtitle: 'React Native, React & Distributed Systems',
-  location: 'Boulder, United States',
+  location: 'Boulder, Colorado, United States',
   email: 'srithar21@gmail.com',
   phone: '682-307-9577',
   links: {
@@ -89,7 +89,7 @@ export const profile: Profile = {
     '14+ years turning regulated, high-stakes ideas — banking, lending, mortgage, B2B apps — into products people actually trust.',
   summary: [
     "I've spent my career at the intersection of mobile and backend: the kind of work where a bug isn't just annoying, it's someone's mortgage payment or bank transfer. I got my start as an iOS engineer at TCS, then spent 14 years moving up through lead and staff roles, building high-performing teams along the way — most recently as a founding mobile engineer at a FinTech startup, where I built the mobile, web, and API strategy from zero.",
-    "I'm just as comfortable on the backend — deep in Azure cloud architecture and distributed systems, building Kafka and RabbitMQ event pipelines that keep high-volume, regulated systems reliable at scale, and architecting push notification infrastructure from scratch that reaches 3 million customers. Lately I've been deep in agentic AI: designing MCP-based workflows that let LLMs make real, multi-step decisions across enterprise systems.",
+    "I'm just as comfortable on the backend — deep in Azure cloud architecture and distributed systems, building Kafka and RabbitMQ event pipelines that keep high-volume, regulated systems reliable at scale, and architecting push notification infrastructure from scratch that reaches 3 million customers. Lately I've been deep in agentic AI: designing MCP-based workflows that let LLMs make real, multi-step decisions across enterprise systems. I also lean hard on AI-assisted development day to day — Claude, OpenAI Codex, and GitHub Copilot are part of how I design, implement, test, and document, not just something I bolt on at the end.",
     "I'm also a test-driven development purist — I'd rather write the test first and the feature second. It's not a checkbox for me; it's how I've built every team I've led, from raising unit test coverage across every team to the automation frameworks that back it up. I care a lot about the unglamorous stuff — test coverage, security, CI/CD — because that's what lets you move fast without breaking someone's finances.",
   ],
 }
@@ -99,6 +99,7 @@ export const stats: Stat[] = [
   { label: 'Users served (Mr. Cooper app)', value: '3M+' },
   { label: 'App Store rating uplift (CPB)', value: '2.0 → 4.5' },
   { label: 'Brands shipped from one codebase', value: '8' },
+  { label: '0→1 products launched', value: '2' },
 ]
 
 // Shown right in the hero so the core stack is the first thing a visitor sees.
@@ -108,11 +109,15 @@ export const primarySkills: string[] = [
   'Android',
   'TypeScript',
   'React',
+  'Express.js',
+  'Spring Boot',
   'Azure Cloud',
   'Kafka & RabbitMQ',
   'Agentic AI (MCP)',
   'TDD',
   'White-Label Architecture',
+  'TurboRepo',
+  'pnpm',
 ]
 
 // Project case studies — the heart of the portfolio. Each one tells a short
@@ -357,7 +362,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: 'Mobile & Frontend',
-    skills: ['React Native', 'TypeScript', 'React', 'Next.js', 'Swift', 'Kotlin', 'SwiftUI', 'Expo'],
+    skills: ['React Native', 'TypeScript', 'React', 'Next.js', 'Swift', 'Kotlin', 'SwiftUI', 'Expo (EAS)'],
   },
   {
     category: 'Backend & Data',
@@ -365,7 +370,18 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: 'Cloud & Infrastructure',
-    skills: ['Azure', 'Azure B2C', 'API Management', 'Kafka', 'RabbitMQ', 'Docker', 'CI/CD', 'GitHub Actions'],
+    skills: [
+      'Azure',
+      'Azure B2C',
+      'API Management',
+      'Kafka',
+      'RabbitMQ',
+      'Docker',
+      'CI/CD',
+      'GitHub Actions',
+      'Azure DevOps',
+      'App Center',
+    ],
   },
   {
     category: 'AI & Agentic Engineering',
@@ -397,7 +413,14 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: 'Architecture',
-    skills: ['Monorepo (TurboRepo)', 'Microservices', 'Event-Driven Architecture', 'White-Label / Multi-Tenant'],
+    skills: [
+      'Monorepo',
+      'TurboRepo',
+      'pnpm',
+      'Microservices',
+      'Event-Driven Architecture',
+      'White-Label / Multi-Tenant',
+    ],
   },
 ]
 

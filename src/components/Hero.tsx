@@ -2,7 +2,7 @@ import { profile, stats, primarySkills } from '../data/resume'
 
 export default function Hero() {
   return (
-    <section id="top" className="relative pt-24 pb-24 px-6 overflow-hidden">
+    <section id="top" className="relative pt-24 pb-10 px-6 overflow-hidden">
       <div
         className="absolute inset-0 -z-10 bg-grain"
         style={{ backgroundSize: '18px 18px' }}
@@ -18,7 +18,7 @@ export default function Hero() {
 
       <div className="max-w-4xl mx-auto">
         <p className="text-accent font-medium text-sm tracking-[0.2em] uppercase">
-          {profile.location} — Staff Engineer, Mobile &amp; Full-Stack
+          Staff Engineer, Mobile &amp; Full-Stack — {profile.location}
         </p>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -60,11 +60,13 @@ export default function Hero() {
           </a>
         </div>
 
-        <dl className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-8">
+        <dl className="mt-20 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
           {stats.map((s) => (
-            <div key={s.label}>
+            <div key={s.label} className="text-center">
               <dt className="font-display text-3xl text-ink">{s.value}</dt>
-              <dd className="text-xs text-ink/50 mt-1 uppercase tracking-wide">{s.label}</dd>
+              <dd className="text-xs text-ink/50 mt-1 uppercase tracking-wide leading-snug min-h-[3.6em]">
+                {s.label}
+              </dd>
             </div>
           ))}
         </dl>

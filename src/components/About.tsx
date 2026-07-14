@@ -5,7 +5,7 @@ export default function About() {
   const ref = useReveal()
 
   return (
-    <section id="about" className="py-20 px-6 max-w-4xl mx-auto">
+    <section id="about" className="pt-10 pb-20 px-6 max-w-4xl mx-auto">
       <div ref={ref} className="reveal">
         <h2 className="font-display text-3xl text-ink mb-6">A bit about how I work</h2>
         <div className="space-y-4">
