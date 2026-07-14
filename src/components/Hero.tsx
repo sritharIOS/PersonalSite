@@ -17,8 +17,9 @@ export default function Hero() {
       />
 
       <div className="max-w-4xl mx-auto">
-        <p className="text-accent font-medium text-sm tracking-[0.2em] uppercase">
-          Staff Engineer, Mobile &amp; Full-Stack — {profile.location}
+        <p className="text-accent font-medium tracking-[0.2em] uppercase">
+          <span className="text-base sm:text-lg">Staff Engineer, Mobile &amp; Full-Stack</span>
+          <span className="text-sm"> — {profile.location}</span>
         </p>
 
         <div className="mt-4 flex flex-wrap gap-2">
