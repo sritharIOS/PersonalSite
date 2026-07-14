@@ -4,8 +4,8 @@ import { profile } from '../data/resume'
 const links = [
   { href: '#about', label: 'About' },
   { href: '#work', label: 'Work' },
-  { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ]
 

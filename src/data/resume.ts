@@ -15,7 +15,7 @@ export interface Profile {
   }
   resumeFile: string
   tagline: string
-  summary: string
+  summary: string[]
 }
 
 export interface Stat {
@@ -26,6 +26,12 @@ export interface Stat {
 export interface ProjectLink {
   label: string
   url: string
+}
+
+export interface BeyondWork {
+  image: string
+  headline: string
+  body: string
 }
 
 export interface Project {
@@ -76,27 +82,30 @@ export const profile: Profile = {
   links: {
     linkedin: 'https://linkedin.com/in/REPLACE_ME',
     github: 'https://github.com/srithar21',
-    medium: 'https://medium.com/@REPLACE_ME',
+    medium: 'https://medium.com/@srithar21',
   },
   resumeFile: '/resume.pdf',
   tagline:
-    '14+ years turning regulated, high-stakes ideas — banking, lending, mortgage — into products people actually trust.',
-  summary:
-    "I've spent my career at the intersection of mobile and backend: the kind of work where a bug isn't just annoying, it's someone's mortgage payment or bank transfer. I got my start as an iOS engineer at TCS, then spent 14 years moving up through lead and staff roles — most recently as a founding mobile engineer at a FinTech startup, where I built the mobile, web, and API strategy from zero. Lately I've been deep in agentic AI: designing MCP-based workflows that let LLMs make real, multi-step decisions across enterprise systems. I care a lot about the unglamorous stuff — test coverage, security, CI/CD — because that's what lets you move fast without breaking someone's finances.",
+    '14+ years turning regulated, high-stakes ideas — banking, lending, mortgage, B2B apps — into products people actually trust.',
+  summary: [
+    "I've spent my career at the intersection of mobile and backend: the kind of work where a bug isn't just annoying, it's someone's mortgage payment or bank transfer. I got my start as an iOS engineer at TCS, then spent 14 years moving up through lead and staff roles, building high-performing teams along the way — most recently as a founding mobile engineer at a FinTech startup, where I built the mobile, web, and API strategy from zero.",
+    "I'm just as comfortable on the backend — deep in Azure cloud architecture and distributed systems, building Kafka and RabbitMQ event pipelines that keep high-volume, regulated systems reliable at scale, and architecting push notification infrastructure from scratch that reaches 3 million customers. Lately I've been deep in agentic AI: designing MCP-based workflows that let LLMs make real, multi-step decisions across enterprise systems.",
+    "I'm also a test-driven development purist — I'd rather write the test first and the feature second. It's not a checkbox for me; it's how I've built every team I've led, from raising unit test coverage across every team to the automation frameworks that back it up. I care a lot about the unglamorous stuff — test coverage, security, CI/CD — because that's what lets you move fast without breaking someone's finances.",
+  ],
 }
 
 export const stats: Stat[] = [
   { label: 'Years of experience', value: '14+' },
   { label: 'Users served (Mr. Cooper app)', value: '3M+' },
   { label: 'App Store rating uplift (CPB)', value: '2.0 → 4.5' },
-  { label: 'Test coverage growth (Elevate)', value: '52% → 80%+' },
+  { label: 'Brands shipped from one codebase', value: '8' },
 ]
 
 // Project case studies — the heart of the portfolio. Each one tells a short
 // problem → approach → impact story instead of a resume bullet dump.
 export const projects: Project[] = [
   {
-    title: 'Swell — a neobank, built from zero',
+    title: 'Swell — a neobank startup, built from zero',
     company: 'Swell Financial — Founding Mobile Engineer',
     timeframe: '2022 – 2025',
     problem:
@@ -169,6 +178,38 @@ export const projects: Project[] = [
     screenshots: ['/projects/cpb-payments.png', '/projects/cpb-transfers.png'],
   },
   {
+    title: 'One iPad codebase, eight enterprise clients',
+    company: 'Ivy Mobility Solutions — Lead iOS Engineer',
+    timeframe: '2013 – 2016',
+    problem:
+      'Ivy Mobility sold the same B2B iPad product to multiple Healthcare and Retail clients, but each client needed their own branding, and every release had to go out through iOS Enterprise distribution rather than the public App Store.',
+    approach: [
+      'Led a team of 8 iOS engineers, designing a white-label architecture that powered every branded client app from one shared Objective-C/MVC codebase.',
+      'Optimized login and local data performance with multithreading and SQLite, supporting 100k+ transactions per login.',
+      'Managed iOS Enterprise releases end to end — provisioning, licensing, and deployment across each client\'s own distribution environment.',
+      'Delivered digital signature capture and SOAP-based Siebel CRM integration for enterprise workflows.',
+    ],
+    impact: 'One codebase served 8 branded enterprise clients — new clients launched through configuration and Enterprise provisioning, not a rebuild.',
+    tags: ['Objective-C', 'White-Label', 'iOS Enterprise', 'SQLite'],
+    links: [],
+  },
+  {
+    title: 'Building a testing culture across mobile and web',
+    company: 'Across Elevate, Central Pacific Bank, and Mr. Cooper',
+    timeframe: '2016 – Present',
+    problem:
+      'Manual QA and flaky releases across React Native, iOS, and Android apps slowed delivery and made every release a gamble — teams needed confidence that shipping wouldn\'t break production.',
+    approach: [
+      'Established TDD (unit, E2E, and integration) as a non-negotiable practice using Jest, React Testing Library, Detox, Maestro, and XCTest.',
+      'Built Appium and Selenium cross-platform automation frameworks from scratch, covering native and web surfaces.',
+      'Deployed automation at scale on device clouds — BrowserStack, SauceLabs, and LambdaTest — fully wired into Azure DevOps, GitHub Actions, and Fastlane.',
+      'Made TDD a team habit, not just a personal one — coached engineers through code reviews and testing standards until it was the default way of working.',
+    ],
+    impact: 'Grew unit test coverage from 52% to 80%+ at Elevate, and cut crashes and regressions across every team that adopted the practice.',
+    tags: ['TDD', 'Jest', 'Detox', 'Maestro', 'Appium', 'Selenium'],
+    links: [],
+  },
+  {
     title: 'Teaching AI agents to run a supply chain',
     company: 'Ascendion — Fullstack Senior Software Engineer',
     timeframe: '2025 – Present',
@@ -197,7 +238,7 @@ export const projects: Project[] = [
     ],
     impact: 'Shipped a complete, privacy-first product solo — architecture through App Store-ready UX — validating a fast AI-assisted solo build workflow.',
     tags: ['NestJS', 'SwiftUI', 'Prisma', 'CloudKit', 'AI-Assisted Dev'],
-    links: [],
+    links: [{ label: 'App Store', url: 'https://apps.apple.com/us/app/confiora/id6767693371' }],
     screenshots: ['/projects/confiora-dashboard.png', '/projects/confiora-onboarding.png'],
   },
 ]
@@ -264,10 +305,11 @@ export const experience: ExperienceItem[] = [
     location: 'Chennai',
     role: 'Lead iOS Engineer',
     dates: 'Aug 2013 – Mar 2016',
-    skills: 'Objective-C, MVC Architecture, SaaS (B2B), SQLite',
+    skills: 'Objective-C, MVC Architecture, SaaS (B2B), White-Label Architecture, iOS Enterprise Distribution, SQLite',
     bullets: [
       'Led a team of 8 iOS engineers delivering a scalable B2B product for Healthcare and Retail clients.',
-      'Built white-label iPad apps, optimizing login performance for 100k+ transactions per login.',
+      'Designed a white-label architecture powering multiple branded iPad apps from one shared Objective-C/MVC codebase, optimizing login performance for 100k+ transactions per login.',
+      'Managed iOS Enterprise releases and App Store distribution — provisioning, licensing, and deployment across diverse client environments.',
       'Delivered digital signature capture and SOAP-based Siebel CRM integration.',
     ],
   },
@@ -303,8 +345,24 @@ export const skillGroups: SkillGroup[] = [
     skills: ['MCP', 'LangChain', 'Prompt Engineering', 'Azure OpenAI', 'TensorFlow', 'Core ML', 'Claude', 'GitHub Copilot'],
   },
   {
-    category: 'Quality & Security',
-    skills: ['TDD', 'Jest', 'Detox', 'XCTest', 'OWASP', 'SAST/DAST', 'PCI DSS', 'Passkeys'],
+    category: 'Testing & QA',
+    skills: [
+      'TDD (Unit, E2E, Integration)',
+      'Jest',
+      'React Testing Library',
+      'Detox',
+      'Maestro',
+      'XCTest',
+      'Appium',
+      'Selenium',
+      'BrowserStack',
+      'SauceLabs',
+      'LambdaTest',
+    ],
+  },
+  {
+    category: 'Security & Compliance',
+    skills: ['OWASP', 'SAST/DAST', 'PCI DSS', 'Passkeys'],
   },
   {
     category: 'Architecture',
@@ -337,8 +395,8 @@ export const certifications: CertificationItem[] = [
 ]
 
 export const expertiseAreas: string[] = [
-  'React Native & TypeScript',
   'Test Driven Development',
+  'React Native & TypeScript',
   'White-Label, Feature Flags',
   'Native iOS & Objective-C',
   'Performance Optimization',
@@ -348,3 +406,9 @@ export const expertiseAreas: string[] = [
   'Native & Turbo Modules',
   'Mentoring',
 ]
+
+export const beyondWork: BeyondWork = {
+  image: '/about/cricket-team.png',
+  headline: 'Founder & Captain',
+  body: "Leadership isn't just a work thing for me — I founded and captain a cricket team, and we've won two tournaments so far.",
+}
