@@ -147,6 +147,7 @@ export const projects: Project[] = [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/mr-cooper/id1114621467' },
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mrcooper.apollo.beta&hl=en_US' },
     ],
+    screenshots: ['/projects/mrcooper-payments.png'],
   },
   {
     title: 'Turning a 2.0-star app into a 4.5-star app',
@@ -165,6 +166,7 @@ export const projects: Project[] = [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/central-pacific-bank/id1515820749' },
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mobile.cpb&hl=en_US' },
     ],
+    screenshots: ['/projects/cpb-payments.png', '/projects/cpb-transfers.png'],
   },
   {
     title: 'Teaching AI agents to run a supply chain',
@@ -182,19 +184,21 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    title: 'A product built solo, end to end',
-    company: 'Confora — Independent Build',
+    title: 'Confiora — family awareness, built solo',
+    company: 'Confiora — Independent Build',
     timeframe: 'Personal Project',
     problem:
-      'Wanted to prove out a full solo product cycle — architecture, backend, mobile UX, and delivery — using modern AI-assisted engineering tools.',
+      'Families lose track of the things that matter most in a crisis — passport and license expiry dates, shared home details, who has access to what. Wanted to build a private, Apple-native way to keep a family "ready" without a team behind me.',
     approach: [
       'Designed and built the entire stack independently: NestJS backend, SwiftUI app, Prisma ORM, and CloudKit sync.',
-      'Used Claude, OpenAI Codex, and GitHub Copilot throughout design, implementation, and testing to move faster solo.',
-      'Owned every decision from data modeling to UX to release — no team, no handoffs.',
+      'Built a Family Awareness score that tracks Home, Recurring, and Invite completeness, with clear next-best-steps when something is missing.',
+      'Added Smart Alerts for passport, visa, license, and other important family dates, plus Apple-account Family Sharing for secure multi-member access.',
+      'Used Claude, OpenAI Codex, and GitHub Copilot throughout design, implementation, and testing to move faster solo — no team, no handoffs.',
     ],
-    impact: 'Shipped a complete product solo, end to end, validating a fast AI-assisted build workflow for future projects.',
-    tags: ['NestJS', 'SwiftUI', 'Prisma', 'AI-Assisted Dev'],
+    impact: 'Shipped a complete, privacy-first product solo — architecture through App Store-ready UX — validating a fast AI-assisted solo build workflow.',
+    tags: ['NestJS', 'SwiftUI', 'Prisma', 'CloudKit', 'AI-Assisted Dev'],
     links: [],
+    screenshots: ['/projects/confiora-dashboard.png', '/projects/confiora-onboarding.png'],
   },
 ]
 

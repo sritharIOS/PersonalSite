@@ -146,3 +146,6 @@ vite.config.ts.timestamp-*
 
 # Raw asset drop folder — working copies live in public/
 /assets/
+
+# Stray build-output renames from sandbox rebuild workarounds
+/dist_old_*/
