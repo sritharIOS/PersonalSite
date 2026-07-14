@@ -101,6 +101,20 @@ export const stats: Stat[] = [
   { label: 'Brands shipped from one codebase', value: '8' },
 ]
 
+// Shown right in the hero so the core stack is the first thing a visitor sees.
+export const primarySkills: string[] = [
+  'React Native',
+  'Native iOS',
+  'Android',
+  'TypeScript',
+  'React',
+  'Azure Cloud',
+  'Kafka & RabbitMQ',
+  'Agentic AI (MCP)',
+  'TDD',
+  'White-Label Architecture',
+]
+
 // Project case studies — the heart of the portfolio. Each one tells a short
 // problem → approach → impact story instead of a resume bullet dump.
 export const projects: Project[] = [

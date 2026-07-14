@@ -26,7 +26,7 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#top" className="font-display text-lg text-ink tracking-tight">
+        <a href="#top" className="font-display text-2xl text-ink tracking-tight">
           {profile.name}
         </a>
 
