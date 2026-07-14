@@ -123,7 +123,7 @@ export const projects: Project[] = [
     screenshots: ['/projects/swell-home.png', '/projects/swell-bundle.png'],
   },
   {
-    title: 'Turning one app into a white-label platform',
+    title: 'Turning one small-loan app into a white-label platform',
     company: 'Elevate Credit — Staff Mobile Platform Engineer',
     timeframe: '2022 – 2025',
     problem:
@@ -329,6 +329,19 @@ export const experience: ExperienceItem[] = [
 
 export const skillGroups: SkillGroup[] = [
   {
+    category: 'Industries & Domains',
+    skills: [
+      'FinTech',
+      'Neobanking',
+      'Banking',
+      'Mortgage',
+      'Small-Dollar Lending',
+      'Supply Chain / Warehousing',
+      'Healthcare & Retail (B2B)',
+      'SaaS',
+    ],
+  },
+  {
     category: 'Mobile & Frontend',
     skills: ['React Native', 'TypeScript', 'React', 'Next.js', 'Swift', 'Kotlin', 'SwiftUI', 'Expo'],
   },
@@ -359,6 +372,10 @@ export const skillGroups: SkillGroup[] = [
       'SauceLabs',
       'LambdaTest',
     ],
+  },
+  {
+    category: 'Observability & Monitoring',
+    skills: ['Firebase Crashlytics', 'Google Analytics', 'Datadog', 'New Relic', 'Azure Application Insights'],
   },
   {
     category: 'Security & Compliance',
