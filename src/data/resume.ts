@@ -140,7 +140,7 @@ export const projects: Project[] = [
     diagram: true,
   },
   {
-    title: 'Modernizing a mortgage app for 3 million people',
+    title: 'Modernizing the Mr. Cooper mortgage app for 3 million people',
     company: 'Mr. Cooper Mortgage — Mobile Applications Lead',
     timeframe: '2016 – 2020',
     problem:
@@ -159,7 +159,7 @@ export const projects: Project[] = [
     screenshots: ['/projects/mrcooper-payments.png'],
   },
   {
-    title: 'Turning a 2.0-star app into a 4.5-star app',
+    title: 'Turning a 2.0-star banking app into a 4.5-star app',
     company: 'Central Pacific Bank — Principal Software Engineer, Mobile',
     timeframe: '2020 – 2022',
     problem:
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     screenshots: ['/projects/cpb-payments.png', '/projects/cpb-transfers.png'],
   },
   {
-    title: 'One iPad codebase, eight enterprise clients',
+    title: 'One iPad codebase, eight enterprise B2B apps',
     company: 'Ivy Mobility Solutions — Lead iOS Engineer',
     timeframe: '2013 – 2016',
     problem:
