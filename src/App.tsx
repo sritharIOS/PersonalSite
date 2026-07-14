@@ -9,7 +9,7 @@ import Contact from './components/Contact'
 
 export default function App() {
   return (
-    <div className="bg-white text-ink">
+    <div className="bg-paper text-ink">
       <Nav />
       <main>
         <Hero />

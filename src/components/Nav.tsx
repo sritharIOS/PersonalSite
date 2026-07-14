@@ -3,8 +3,8 @@ import { profile } from '../data/resume'
 
 const links = [
   { href: '#about', label: 'About' },
+  { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
-  { href: '#work', label: 'Selected Work' },
   { href: '#skills', label: 'Skills' },
   { href: '#contact', label: 'Contact' },
 ]
@@ -22,11 +22,11 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-colors ${
-        scrolled ? 'bg-white/90 backdrop-blur border-b border-slate-200' : 'bg-transparent'
+        scrolled ? 'bg-paper/90 backdrop-blur border-b border-ink/10' : 'bg-transparent'
       }`}
     >
       <nav className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#top" className="font-semibold text-ink tracking-tight">
+        <a href="#top" className="font-display text-lg text-ink tracking-tight">
           {profile.name}
         </a>
 
@@ -35,7 +35,7 @@ export default function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-slate-600 hover:text-accent transition-colors"
+              className="text-sm text-ink/60 hover:text-accent transition-colors"
             >
               {l.label}
             </a>
@@ -43,7 +43,7 @@ export default function Nav() {
           <a
             href={profile.resumeFile}
             download
-            className="text-sm font-medium px-4 py-2 rounded-full bg-ink text-white hover:bg-accent transition-colors"
+            className="text-sm font-medium px-4 py-2 rounded-full bg-ink text-paper hover:bg-accent transition-colors"
           >
             Resume
           </a>
@@ -65,13 +65,13 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-paper border-b border-ink/10 px-6 py-4 flex flex-col gap-4">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-sm text-slate-700"
+              className="text-sm text-ink/80"
             >
               {l.label}
             </a>
@@ -79,7 +79,7 @@ export default function Nav() {
           <a
             href={profile.resumeFile}
             download
-            className="text-sm font-medium px-4 py-2 rounded-full bg-ink text-white text-center"
+            className="text-sm font-medium px-4 py-2 rounded-full bg-ink text-paper text-center"
           >
             Download Resume
           </a>
