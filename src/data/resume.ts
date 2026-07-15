@@ -197,7 +197,7 @@ export const projects: Project[] = [
     screenshots: ['/projects/cpb-payments.png', '/projects/cpb-transfers.png'],
   },
   {
-    title: 'One iPad codebase, eight enterprise B2B apps',
+    title: 'One iPad codebase, eight enterprise B2B clients',
     company: 'Ivy Mobility Solutions — Lead iOS Engineer',
     timeframe: '2013 – 2016',
     problem:
