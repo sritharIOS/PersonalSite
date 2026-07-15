@@ -16,6 +16,7 @@ export interface Profile {
   resumeFile: string
   tagline: string
   summary: string[]
+  workAuthorization: string
 }
 
 export interface Stat {
@@ -102,6 +103,7 @@ export const profile: Profile = {
     "I also believe great engineering comes from strong fundamentals. Test-driven development, automated testing, CI/CD, observability, and security aren't afterthoughts—they're the foundation that allows teams to ship quickly with confidence. Whether I'm mentoring engineers or designing systems, my focus is on building software that's maintainable, scalable, and dependable.",
     "Outside of work, I enjoy building products from scratch. My latest project, Confiora, explores how AI-assisted development can accelerate high-quality software delivery while maintaining a strong focus on privacy, user experience, and engineering discipline.",
   ],
+  workAuthorization: 'H1B visa — transfer only, I-140 approved',
 }
 
 export const stats: Stat[] = [

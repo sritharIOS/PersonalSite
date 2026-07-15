@@ -43,6 +43,8 @@ export default function Contact() {
             Medium
           </a>
         </div>
+
+        <p className="mt-6 text-xs text-paper/40 relative">{profile.workAuthorization}</p>
       </div>
 
       <footer className="text-center text-xs text-ink/40 mt-8">
