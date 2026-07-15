@@ -49,6 +49,7 @@ export interface Project {
   pipeline?: boolean
   logos?: string[]
   image?: string
+  companyLogo?: string
   ratingUplift?: { before: number; after: number }
 }
 
@@ -91,7 +92,7 @@ export const profile: Profile = {
   },
   resumeFile: '/resume.pdf',
   tagline:
-    'Building AI-powered, fintech, and enterprise mobile platforms used by millions.',
+    'Specializing in AI, fintech, and enterprise platforms powering millions of users.',
   summary: [
     "I've spent my career at the intersection of mobile and backend: the kind of work where a bug isn't just annoying, it's someone's mortgage payment or bank transfer. I got my start as an iOS engineer at TCS, then spent 14 years moving up through lead and staff roles, building high-performing teams along the way — most recently as a founding mobile engineer at a FinTech startup, where I built the mobile, web, and API strategy from zero.",
     "I'm just as comfortable on the backend — deep in Azure cloud architecture and distributed systems, building Kafka and RabbitMQ event pipelines that keep high-volume, regulated systems reliable at scale, and architecting push notification infrastructure from scratch that reaches 3 million customers.",
@@ -148,6 +149,7 @@ export const projects: Project[] = [
       { label: 'Series A coverage — Built In Colorado', url: 'https://www.builtincolorado.com/articles/swell-raises-10m-series-a-hiring' },
     ],
     screenshots: ['/projects/swell-home.png', '/projects/swell-bundle.png'],
+    companyLogo: '/logos/swell.png',
   },
   {
     slug: 'white-label-platform',
@@ -166,6 +168,7 @@ export const projects: Project[] = [
     tags: ['React Native', 'ContentStack CMS', 'Redux', 'White-Label'],
     links: [],
     diagram: true,
+    companyLogo: '/logos/elevate.png',
   },
   {
     slug: 'mr-cooper',
@@ -186,6 +189,7 @@ export const projects: Project[] = [
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mrcooper.apollo.beta&hl=en_US' },
     ],
     screenshots: ['/projects/mrcooper-payments.png'],
+    companyLogo: '/logos/mrcooper.png',
   },
   {
     slug: 'central-pacific-bank',
@@ -209,6 +213,7 @@ export const projects: Project[] = [
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mobile.cpb&hl=en_US' },
     ],
     screenshots: ['/projects/cpb-payments.png', '/projects/cpb-transfers.png'],
+    companyLogo: '/logos/cpb.png',
   },
   {
     slug: 'ivy-mobility',
@@ -227,6 +232,7 @@ export const projects: Project[] = [
     tags: ['Objective-C', 'White-Label', 'iOS Enterprise', 'SQLite'],
     links: [],
     image: '/projects/ivy-enterprise-ipad.png',
+    companyLogo: '/logos/ivy-mobility.png',
   },
   {
     slug: 'testing-culture',
@@ -262,6 +268,7 @@ export const projects: Project[] = [
     tags: ['MCP', 'LLM Tool-Calling', 'Kafka', 'Spring Boot'],
     links: [],
     image: '/projects/ascendion-ai-agent.png',
+    companyLogo: '/logos/ascendion.png',
   },
   {
     slug: 'confiora',
@@ -280,6 +287,7 @@ export const projects: Project[] = [
     tags: ['NestJS', 'SwiftUI', 'Prisma', 'CloudKit', 'AI-Assisted Dev'],
     links: [{ label: 'App Store', url: 'https://apps.apple.com/us/app/confiora/id6767693371' }],
     screenshots: ['/projects/confiora-dashboard.png', '/projects/confiora-onboarding.png'],
+    companyLogo: '/logos/confiora.png',
   },
 ]
 

@@ -25,10 +25,19 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         <h3 className="font-display text-2xl text-ink mt-2 leading-tight group-hover:text-accent transition-colors">
           {project.title}
         </h3>
-        <p className="text-sm text-ink/50 mt-1">{project.company}</p>
+        <div className="mt-1 flex items-center gap-2">
+          {project.companyLogo && (
+            <img
+              src={project.companyLogo}
+              alt={`${project.company} logo`}
+              className="h-4 w-auto max-w-[80px] object-contain"
+            />
+          )}
+          <p className="text-sm text-ink/50">{project.company}</p>
+        </div>
         <p className="mt-3 text-sm text-ink/70 leading-relaxed">{project.impact}</p>
         <span className="mt-4 inline-block text-sm font-medium text-accent">
-          Read the case study →
+          Explore project →
         </span>
       </div>
     </Link>

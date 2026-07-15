@@ -27,9 +27,19 @@ export default function CaseStudy() {
       <h1 className="font-display text-4xl sm:text-5xl text-ink mt-2 leading-tight">
         {project.title}
       </h1>
-      <p className="text-sm text-ink/50 mt-3">
-        {project.company} · {project.timeframe}
-      </p>
+
+      <div className="mt-3 flex items-center gap-3">
+        {project.companyLogo && (
+          <img
+            src={project.companyLogo}
+            alt={`${project.company} logo`}
+            className="h-6 w-auto max-w-[110px] object-contain"
+          />
+        )}
+        <p className="text-sm text-ink/50">
+          {project.company} · {project.timeframe}
+        </p>
+      </div>
 
       <div className="mt-8">
         <ProjectVisual project={project} index={index} />
