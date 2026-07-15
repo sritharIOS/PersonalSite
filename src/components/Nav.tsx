@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { profile } from '../data/resume'
 
 const links = [
-  { href: '#about', label: 'About' },
-  { href: '#work', label: 'Work' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'About' },
+  { href: '/#work', label: 'Work' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 export default function Nav() {
@@ -28,13 +29,13 @@ export default function Nav() {
       <nav className="max-w-5xl mx-auto relative flex items-center justify-center px-6 py-4">
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              to={l.href}
               className="text-sm text-ink/60 hover:text-accent transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <a
             href={profile.resumeFile}
@@ -63,14 +64,14 @@ export default function Nav() {
       {open && (
         <div className="md:hidden bg-paper border-b border-ink/10 px-6 py-4 flex flex-col gap-4">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              to={l.href}
               onClick={() => setOpen(false)}
               className="text-sm text-ink/80"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <a
             href={profile.resumeFile}

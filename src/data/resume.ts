@@ -35,6 +35,7 @@ export interface BeyondWork {
 }
 
 export interface Project {
+  slug: string
   title: string
   company: string
   timeframe: string
@@ -45,8 +46,10 @@ export interface Project {
   links: ProjectLink[]
   screenshots?: string[]
   diagram?: boolean
+  pipeline?: boolean
   logos?: string[]
   image?: string
+  ratingUplift?: { before: number; after: number }
 }
 
 export interface ExperienceItem {
@@ -128,6 +131,7 @@ export const primarySkills: string[] = [
 // problem → approach → impact story instead of a resume bullet dump.
 export const projects: Project[] = [
   {
+    slug: 'swell',
     title: 'Swell — a neobank startup, built from zero',
     company: 'Swell Financial — Founding Mobile Engineer',
     timeframe: '2022 – 2025',
@@ -146,6 +150,7 @@ export const projects: Project[] = [
     screenshots: ['/projects/swell-home.png', '/projects/swell-bundle.png'],
   },
   {
+    slug: 'white-label-platform',
     title: 'Turning one small-loan app into a white-label platform',
     company: 'Elevate Credit — Staff Mobile Platform Engineer',
     timeframe: '2022 – 2025',
@@ -163,6 +168,7 @@ export const projects: Project[] = [
     diagram: true,
   },
   {
+    slug: 'mr-cooper',
     title: 'Modernizing the Mr. Cooper mortgage app for 3 million people',
     company: 'Mr. Cooper Mortgage — Mobile Applications Lead',
     timeframe: '2016 – 2020',
@@ -182,6 +188,7 @@ export const projects: Project[] = [
     screenshots: ['/projects/mrcooper-payments.png'],
   },
   {
+    slug: 'central-pacific-bank',
     title: 'Turning a 2.0-star banking app into a 4.9-star app',
     company: 'Central Pacific Bank — Principal Software Engineer, Mobile',
     timeframe: '2020 – 2022',
@@ -195,6 +202,7 @@ export const projects: Project[] = [
       'Integrated Salesforce with DocuSign to automate document generation and e-signature workflows for customer agreements.',
     ],
     impact: 'App Store rating climbed from 2.0 to 4.9 — a direct result of the rebuild.',
+    ratingUplift: { before: 2.0, after: 4.9 },
     tags: ['React Native', 'Azure', 'AI Agents'],
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/central-pacific-bank/id1515820749' },
@@ -203,6 +211,7 @@ export const projects: Project[] = [
     screenshots: ['/projects/cpb-payments.png', '/projects/cpb-transfers.png'],
   },
   {
+    slug: 'ivy-mobility',
     title: 'One iPad codebase, eight enterprise B2B clients',
     company: 'Ivy Mobility Solutions — Lead iOS Engineer',
     timeframe: '2013 – 2016',
@@ -220,6 +229,7 @@ export const projects: Project[] = [
     image: '/projects/ivy-enterprise-ipad.png',
   },
   {
+    slug: 'testing-culture',
     title: 'Building a testing culture across mobile and web',
     company: 'Across Elevate, Central Pacific Bank, and Mr. Cooper',
     timeframe: '2016 – Present',
@@ -234,10 +244,11 @@ export const projects: Project[] = [
     impact: 'Grew unit test coverage from 52% to 80%+ at Elevate, and cut crashes and regressions across every team that adopted the practice.',
     tags: ['TDD', 'Jest', 'Detox', 'Maestro', 'Appium', 'Selenium'],
     links: [],
-    logos: ['/projects/testing-browserstack.png', '/projects/testing-saucelabs.png', '/projects/testing-lambdatest.png'],
+    pipeline: true,
   },
   {
-    title: 'Teaching AI agents to run a supply chain',
+    slug: 'ai-agents-supply-chain',
+    title: 'Building AI agents for enterprise supply chains',
     company: 'Ascendion — Fullstack Senior Software Engineer',
     timeframe: '2025 – Present',
     problem:
@@ -253,6 +264,7 @@ export const projects: Project[] = [
     image: '/projects/ascendion-ai-agent.png',
   },
   {
+    slug: 'confiora',
     title: 'Confiora — family awareness, built solo',
     company: 'Confiora — Independent Build',
     timeframe: 'Personal Project',

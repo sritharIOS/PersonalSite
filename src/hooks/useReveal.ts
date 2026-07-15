@@ -1,8 +1,8 @@
 import { useEffect, useRef, type RefObject } from 'react'
 
 // Lightweight scroll-in fade/slide, no external animation library.
-export default function useReveal(): RefObject<HTMLDivElement> {
-  const ref = useRef<HTMLDivElement>(null)
+export default function useReveal<T extends HTMLElement = HTMLDivElement>(): RefObject<T> {
+  const ref = useRef<T>(null)
 
   useEffect(() => {
     const el = ref.current

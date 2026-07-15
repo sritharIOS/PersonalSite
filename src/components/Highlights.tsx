@@ -1,153 +1,52 @@
+import { Link } from 'react-router-dom'
 import { projects, type Project } from '../data/resume'
 import useReveal from '../hooks/useReveal'
-import ArchitectureDiagram from './ArchitectureDiagram'
+import ProjectVisual from './ProjectVisual'
 
-const blockGradients = [
-  'from-accent/25 via-accent/5 to-transparent',
-  'from-moss/25 via-moss/5 to-transparent',
-  'from-accent/20 via-moss/10 to-transparent',
-  'from-moss/20 via-accent/10 to-transparent',
-  'from-ink/15 via-accent/5 to-transparent',
-]
-
-interface ProjectCaseProps {
+interface ProjectCardProps {
   project: Project
   index: number
 }
 
-function ProjectCase({ project, index }: ProjectCaseProps) {
-  const ref = useReveal()
-  const reversed = index % 2 === 1
+function ProjectCard({ project, index }: ProjectCardProps) {
+  const ref = useReveal<HTMLAnchorElement>()
 
   return (
-    <div
+    <Link
       ref={ref}
-      className="reveal grid md:grid-cols-2 gap-10 md:gap-16 items-center py-14 border-b border-ink/10 last:border-0"
+      to={`/work/${project.slug}`}
+      className="reveal group block rounded-3xl border border-ink/10 hover:border-accent/40 hover:shadow-lg transition-all overflow-hidden bg-white/40"
     >
-      <div className={reversed ? 'md:order-2' : ''}>
+      <ProjectVisual project={project} index={index} className="rounded-none border-0" />
+      <div className="p-6">
         <span className="font-display text-sm text-accent">
           {String(index + 1).padStart(2, '0')}
         </span>
-        <h3 className="font-display text-3xl sm:text-4xl text-ink mt-2 leading-tight">
+        <h3 className="font-display text-2xl text-ink mt-2 leading-tight group-hover:text-accent transition-colors">
           {project.title}
         </h3>
-        <p className="text-sm text-ink/50 mt-2">
-          {project.company} · {project.timeframe}
-        </p>
-
-        <p className="mt-6 text-ink/70 leading-relaxed">
-          <span className="font-medium text-ink">The challenge: </span>
-          {project.problem}
-        </p>
-
-        <ul className="mt-5 space-y-2">
-          {project.approach.map((a, i) => (
-            <li key={i} className="text-sm text-ink/70 leading-relaxed flex gap-2">
-              <span className="text-accent mt-1 flex-shrink-0">→</span>
-              <span>{a}</span>
-            </li>
-          ))}
-        </ul>
-
-        <p className="mt-5 text-sm font-medium text-ink bg-ink/5 rounded-xl px-4 py-3">
-          {project.impact}
-        </p>
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          {project.tags.map((t) => (
-            <span key={t} className="text-xs font-medium px-2.5 py-1 rounded-full bg-ink/5 text-ink/60">
-              {t}
-            </span>
-          ))}
-        </div>
-
-        {project.links.length > 0 && (
-          <div className="mt-5 flex flex-wrap gap-4">
-            {project.links.map((l) => (
-              <a
-                key={l.url}
-                href={l.url}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-medium text-accent hover:underline"
-              >
-                {l.label} ↗
-              </a>
-            ))}
-          </div>
-        )}
+        <p className="text-sm text-ink/50 mt-1">{project.company}</p>
+        <p className="mt-3 text-sm text-ink/70 leading-relaxed">{project.impact}</p>
+        <span className="mt-4 inline-block text-sm font-medium text-accent">
+          Read the case study →
+        </span>
       </div>
-
-      <div className={reversed ? 'md:order-1' : ''}>
-        {project.image ? (
-          <div
-            className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${blockGradients[index % blockGradients.length]} border border-ink/10 flex items-center justify-center p-4 overflow-hidden`}
-          >
-            <img
-              src={project.image}
-              alt={`${project.title} — screenshot`}
-              className="w-full h-full object-contain rounded-2xl"
-            />
-          </div>
-        ) : project.logos && project.logos.length > 0 ? (
-          <div
-            className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${blockGradients[index % blockGradients.length]} border border-ink/10 flex flex-col items-center justify-center gap-5 p-8`}
-          >
-            {project.logos.map((src) => (
-              <img
-                key={src}
-                src={src}
-                alt={`${project.title} — tooling logo`}
-                className="w-full max-w-[220px] h-auto object-contain bg-white/80 rounded-xl shadow-md border border-ink/10 p-4"
-              />
-            ))}
-          </div>
-        ) : project.screenshots && project.screenshots.length > 0 ? (
-          <div
-            className={`relative aspect-[4/3] rounded-3xl bg-gradient-to-br ${blockGradients[index % blockGradients.length]} border border-ink/10 overflow-hidden flex items-center justify-center gap-4 p-6`}
-          >
-            {project.screenshots.map((src, i) => (
-              <img
-                key={src}
-                src={src}
-                alt={`${project.title} — screenshot ${i + 1}`}
-                className="h-full max-h-full w-auto rounded-2xl shadow-xl border border-ink/10 object-cover"
-                style={{ transform: i % 2 === 0 ? 'rotate(-3deg)' : 'rotate(2deg)' }}
-              />
-            ))}
-          </div>
-        ) : project.diagram ? (
-          <div
-            className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${blockGradients[index % blockGradients.length]} border border-ink/10 flex items-center justify-center p-6`}
-          >
-            <ArchitectureDiagram />
-          </div>
-        ) : (
-          <div
-            className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${blockGradients[index % blockGradients.length]} border border-ink/10 flex items-center justify-center`}
-          >
-            <span className="font-display text-7xl sm:text-8xl text-ink/10 select-none">
-              {String(index + 1).padStart(2, '0')}
-            </span>
-          </div>
-        )}
-      </div>
-    </div>
+    </Link>
   )
 }
 
 export default function Highlights() {
   return (
-    <section id="work" className="py-20 px-6 max-w-4xl mx-auto">
+    <section id="work" className="py-20 px-6 max-w-5xl mx-auto">
       <h2 className="font-display text-3xl text-ink mb-3">Selected work</h2>
-      <p className="text-ink/60 max-w-xl mb-4">
+      <p className="text-ink/60 max-w-xl mb-10">
         Projects that show the range — 0→1 platform builds, large-scale rebuilds, platform
         architecture, and recent work in agentic AI.
       </p>
 
-      <div>
+      <div className="grid sm:grid-cols-2 gap-6">
         {projects.map((p, i) => (
-          <ProjectCase key={p.title} project={p} index={i} />
+          <ProjectCard key={p.slug} project={p} index={i} />
         ))}
       </div>
     </section>
