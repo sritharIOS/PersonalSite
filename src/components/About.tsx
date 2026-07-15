@@ -1,6 +1,22 @@
 import { profile, beyondWork } from '../data/resume'
 import useReveal from '../hooks/useReveal'
 
+// Phrases to visually emphasize within the About paragraphs.
+const highlights = ['As a founding engineer at a fintech startup']
+
+function renderWithHighlights(text: string) {
+  const pattern = new RegExp(`(${highlights.join('|')})`, 'g')
+  return text.split(pattern).map((part, i) =>
+    highlights.includes(part) ? (
+      <strong key={i} className="text-ink font-semibold">
+        {part}
+      </strong>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
+  )
+}
+
 export default function About() {
   const ref = useReveal()
 
@@ -11,7 +27,7 @@ export default function About() {
         <div className="space-y-4">
           {profile.summary.map((paragraph, i) => (
             <p key={i} className="text-ink/70 leading-relaxed text-lg">
-              {paragraph}
+              {renderWithHighlights(paragraph)}
             </p>
           ))}
         </div>
