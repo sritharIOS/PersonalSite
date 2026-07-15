@@ -33,7 +33,7 @@ export default function Hero() {
           ))}
         </div>
 
-        <h1 className="mt-8 font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-ink">
+        <h1 className="mt-14 font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-ink">
           I build products that <span className="italic text-accent">3 million people</span> trust every day.
         </h1>
 
