@@ -104,10 +104,10 @@ export const profile: Profile = {
 
 export const stats: Stat[] = [
   { label: 'Years of experience', value: '14+' },
-  { label: 'Users served (Mr. Cooper app)', value: '3M+' },
+  { label: 'Users', value: '3M+' },
   { label: 'App Store rating uplift (CPB)', value: '2.0 → 4.9' },
   { label: 'Brands shipped from one codebase', value: '8' },
-  { label: '0→1 products launched', value: '2' },
+  { label: 'Products Built from Scratch', value: '2' },
 ]
 
 // Shown right in the hero so the core stack is the first thing a visitor sees.
