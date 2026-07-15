@@ -21,6 +21,7 @@ export default function Hero() {
 
         <p className="mt-2 text-accent font-medium tracking-[0.2em] uppercase">
           <span className="text-sm sm:text-base">Full-Stack Staff Software Engineer</span>
+          <span className="text-xs"> — {profile.location}</span>
         </p>
 
         <p className="mt-3 max-w-xl text-sm text-ink/70 leading-relaxed">{profile.tagline}</p>
