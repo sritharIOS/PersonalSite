@@ -108,6 +108,7 @@ export const stats: Stat[] = [
   { label: 'App Store rating uplift (CPB)', value: '2.0 → 4.9' },
   { label: 'Brands shipped from one codebase', value: '8' },
   { label: 'Products Built from Scratch', value: '2' },
+  { label: 'Series A Launch (Swell)', value: '$10M' },
 ]
 
 // Shown right in the hero so the core stack is the first thing a visitor sees.
