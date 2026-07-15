@@ -1,6 +1,8 @@
 import type { Project } from '../data/resume'
 import ArchitectureDiagram from './ArchitectureDiagram'
 import TestingPipelineDiagram from './TestingPipelineDiagram'
+import NotificationFlowDiagram from './NotificationFlowDiagram'
+import AuthMigrationDiagram from './AuthMigrationDiagram'
 
 export const blockGradients = [
   'from-accent/25 via-accent/5 to-transparent',
@@ -84,6 +86,26 @@ export default function ProjectVisual({ project, index, className = '' }: Projec
         className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${gradient} border border-ink/10 flex items-center justify-center p-6 ${className}`}
       >
         <TestingPipelineDiagram />
+      </div>
+    )
+  }
+
+  if (project.notificationFlow) {
+    return (
+      <div
+        className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${gradient} border border-ink/10 flex items-center justify-center p-6 ${className}`}
+      >
+        <NotificationFlowDiagram />
+      </div>
+    )
+  }
+
+  if (project.authMigration) {
+    return (
+      <div
+        className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${gradient} border border-ink/10 flex items-center justify-center p-6 ${className}`}
+      >
+        <AuthMigrationDiagram />
       </div>
     )
   }

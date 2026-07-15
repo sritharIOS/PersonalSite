@@ -47,6 +47,8 @@ export interface Project {
   screenshots?: string[]
   diagram?: boolean
   pipeline?: boolean
+  notificationFlow?: boolean
+  authMigration?: boolean
   logos?: string[]
   image?: string
   companyLogo?: string
@@ -190,6 +192,44 @@ export const projects: Project[] = [
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mrcooper.apollo.beta&hl=en_US' },
     ],
     screenshots: ['/projects/mrcooper-payments.png'],
+    companyLogo: '/logos/mrcooper.png',
+  },
+  {
+    slug: 'push-notifications',
+    title: 'Push notification architecture for 3 million customers',
+    company: 'Mr. Cooper Mortgage — Mobile Applications Lead',
+    timeframe: '2016 – 2020',
+    problem:
+      'Mr. Cooper needed one platform that could reliably reach 3 million mobile customers with both real-time transactional alerts (like a money transfer confirmation) and high-volume marketing campaigns — without overwhelming downstream systems or losing messages at scale.',
+    approach: [
+      'Built a device registration flow: the app obtains an APNs/FCM token, sends it to an Express.js API, which stores it in SQL Server and registers the device and tags in Azure Notification Hub.',
+      'Designed two delivery paths off a single Notification API — real-time transactional notifications routed directly through Azure Notification Hub to APNs/FCM in 1–3 seconds, and high-volume batch campaigns published to Kafka.',
+      'Built a Kafka producer/consumer pipeline where notification workers process batches in parallel, pulling device registrations from SQL Server to scale a single campaign to hundreds of thousands of recipients.',
+      'Implemented retry with exponential backoff and optional dead-letter-queue routing for failed sends, with SQL Server tracking notification history and audit records for reporting and replay.',
+    ],
+    impact: 'Delivered a fault-tolerant platform serving 3M+ registered users and millions of device tokens — real-time transactional messaging and large-scale batch campaigns on the same stateless, horizontally scalable architecture.',
+    tags: ['Azure Notification Hub', 'APNs', 'FCM', 'Kafka', 'Express.js', 'SQL Server'],
+    links: [],
+    notificationFlow: true,
+    companyLogo: '/logos/mrcooper.png',
+  },
+  {
+    slug: 'okta-to-entra-id',
+    title: 'Migrating 3 million users from Okta to Azure Entra ID',
+    company: 'Mr. Cooper Mortgage — Mobile Applications Lead',
+    timeframe: '2016 – 2020',
+    problem:
+      "Mr. Cooper's mobile authentication ran on a native Okta login page backed by browser cookies and server-side sessions, which caused login friction, unexpected sign-outs, and no real path to MFA or custom auth journeys for 3M+ users.",
+    approach: [
+      'Replaced the native Okta login and cookie-session flow with OAuth 2.0 Authorization Code Flow + PKCE against Azure Entra ID (Azure AD B2C), issuing Access, Refresh, and ID tokens directly to the app.',
+      "Solved the core migration blocker — Okta doesn't export password hashes — by routing first login through a guided identity-verification and reset flow instead of forcing an immediate mass password reset on 3M+ customers.",
+      'Hardened the API layer so Express.js validates JWT signature, issuer, audience, scopes, and expiration on every request, with silent refresh-token renewal replacing server-side session management.',
+      'Rolled out in phases while monitoring authentication metrics, then decommissioned the legacy Okta implementation once migration was verified stable.',
+    ],
+    impact: 'Modernized authentication for 3M+ mobile users with no forced mass password reset — improving login reliability, cutting auth-related support tickets, and reducing licensing costs by $300K by decommissioning Okta.',
+    tags: ['Azure Entra ID', 'OAuth 2.0', 'PKCE', 'OpenID Connect', 'JWT', 'Express.js'],
+    links: [],
+    authMigration: true,
     companyLogo: '/logos/mrcooper.png',
   },
   {
