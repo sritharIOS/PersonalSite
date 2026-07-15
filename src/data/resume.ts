@@ -86,7 +86,7 @@ export const profile: Profile = {
   },
   resumeFile: '/resume.pdf',
   tagline:
-    '14+ years turning regulated, high-stakes ideas — banking, lending, mortgage, B2B apps — into products people actually trust.',
+    'Building AI-powered, fintech, and enterprise mobile platforms used by millions.',
   summary: [
     "I've spent my career at the intersection of mobile and backend: the kind of work where a bug isn't just annoying, it's someone's mortgage payment or bank transfer. I got my start as an iOS engineer at TCS, then spent 14 years moving up through lead and staff roles, building high-performing teams along the way — most recently as a founding mobile engineer at a FinTech startup, where I built the mobile, web, and API strategy from zero.",
     "I'm just as comfortable on the backend — deep in Azure cloud architecture and distributed systems, building Kafka and RabbitMQ event pipelines that keep high-volume, regulated systems reliable at scale, and architecting push notification infrastructure from scratch that reaches 3 million customers. Lately I've been deep in agentic AI: designing MCP-based workflows that let LLMs make real, multi-step decisions across enterprise systems. I also lean hard on AI-assisted development day to day — Claude, OpenAI Codex, and GitHub Copilot are part of how I design, implement, test, and document, not just something I bolt on at the end.",
@@ -97,7 +97,7 @@ export const profile: Profile = {
 export const stats: Stat[] = [
   { label: 'Years of experience', value: '14+' },
   { label: 'Users served (Mr. Cooper app)', value: '3M+' },
-  { label: 'App Store rating uplift (CPB)', value: '2.0 → 4.5' },
+  { label: 'App Store rating uplift (CPB)', value: '2.0 → 4.9' },
   { label: 'Brands shipped from one codebase', value: '8' },
   { label: '0→1 products launched', value: '2' },
 ]
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     screenshots: ['/projects/mrcooper-payments.png'],
   },
   {
-    title: 'Turning a 2.0-star banking app into a 4.5-star app',
+    title: 'Turning a 2.0-star banking app into a 4.9-star app',
     company: 'Central Pacific Bank — Principal Software Engineer, Mobile',
     timeframe: '2020 – 2022',
     problem:
@@ -188,7 +188,7 @@ export const projects: Project[] = [
       'Designed and shipped core banking flows: Instant Transfers, Card Management, Transactions, and External Transfers.',
       'Architected Azure-based AI identity agents that improved verification accuracy and cut agent handling time.',
     ],
-    impact: 'App Store rating climbed from 2.0 to 4.5 — a direct result of the rebuild.',
+    impact: 'App Store rating climbed from 2.0 to 4.9 — a direct result of the rebuild.',
     tags: ['React Native', 'Azure', 'AI Agents'],
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/central-pacific-bank/id1515820749' },
@@ -300,7 +300,7 @@ export const experience: ExperienceItem[] = [
     skills:
       'React Native, TypeScript, Next.js, React, Express.js, Spring Boot, Azure, CI/CD, SendGrid, Twilio',
     bullets: [
-      'Led a full mobile app and website rebrand as Principal Engineer, raising App Store rating from 2.0 to 4.5.',
+      'Led a full mobile app and website rebrand as Principal Engineer, raising App Store rating from 2.0 to 4.9.',
       'Built core banking flows: Instant Transfers, Transactions, Card Management, External Transfers.',
       'Architected Azure-based AI identity agents, improving verification accuracy and handling time.',
       'Led and mentored a team of junior developers.',

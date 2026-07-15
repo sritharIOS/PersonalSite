@@ -25,11 +25,7 @@ export default function Nav() {
         scrolled ? 'bg-paper/90 backdrop-blur border-b border-ink/10' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#top" className="font-display text-2xl text-ink tracking-tight">
-          {profile.name}
-        </a>
-
+      <nav className="max-w-5xl mx-auto relative flex items-center justify-center px-6 py-4">
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a
@@ -50,7 +46,7 @@ export default function Nav() {
         </div>
 
         <button
-          className="md:hidden text-ink"
+          className="md:hidden absolute right-6 text-ink"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >

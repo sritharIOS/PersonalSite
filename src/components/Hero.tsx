@@ -17,10 +17,13 @@ export default function Hero() {
       />
 
       <div className="max-w-4xl mx-auto">
-        <p className="text-accent font-medium tracking-[0.2em] uppercase">
-          <span className="text-base sm:text-lg">Staff Engineer, Mobile &amp; Full-Stack</span>
-          <span className="text-sm"> — {profile.location}</span>
+        <p className="font-display text-3xl sm:text-4xl text-ink tracking-tight">{profile.name}</p>
+
+        <p className="mt-2 text-accent font-medium tracking-[0.2em] uppercase">
+          <span className="text-sm sm:text-base">Full-Stack Staff Software Engineer</span>
         </p>
+
+        <p className="mt-3 max-w-xl text-sm text-ink/70 leading-relaxed">{profile.tagline}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {primarySkills.map((skill) => (
@@ -36,8 +39,6 @@ export default function Hero() {
         <h1 className="mt-14 font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-ink">
           I build products that <span className="italic text-accent">3 million people</span> trust every day.
         </h1>
-
-        <p className="mt-8 max-w-xl text-lg text-ink/70 leading-relaxed">{profile.tagline}</p>
 
         <div className="mt-8 flex flex-wrap gap-3">
           <a
