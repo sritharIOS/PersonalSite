@@ -79,7 +79,30 @@ function ProjectCase({ project, index }: ProjectCaseProps) {
       </div>
 
       <div className={reversed ? 'md:order-1' : ''}>
-        {project.screenshots && project.screenshots.length > 0 ? (
+        {project.image ? (
+          <div
+            className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${blockGradients[index % blockGradients.length]} border border-ink/10 flex items-center justify-center p-4 overflow-hidden`}
+          >
+            <img
+              src={project.image}
+              alt={`${project.title} — screenshot`}
+              className="w-full h-full object-contain rounded-2xl"
+            />
+          </div>
+        ) : project.logos && project.logos.length > 0 ? (
+          <div
+            className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${blockGradients[index % blockGradients.length]} border border-ink/10 flex flex-col items-center justify-center gap-5 p-8`}
+          >
+            {project.logos.map((src) => (
+              <img
+                key={src}
+                src={src}
+                alt={`${project.title} — tooling logo`}
+                className="w-full max-w-[220px] h-auto object-contain bg-white/80 rounded-xl shadow-md border border-ink/10 p-4"
+              />
+            ))}
+          </div>
+        ) : project.screenshots && project.screenshots.length > 0 ? (
           <div
             className={`relative aspect-[4/3] rounded-3xl bg-gradient-to-br ${blockGradients[index % blockGradients.length]} border border-ink/10 overflow-hidden flex items-center justify-center gap-4 p-6`}
           >

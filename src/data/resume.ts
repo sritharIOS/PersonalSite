@@ -45,6 +45,8 @@ export interface Project {
   links: ProjectLink[]
   screenshots?: string[]
   diagram?: boolean
+  logos?: string[]
+  image?: string
 }
 
 export interface ExperienceItem {
@@ -89,7 +91,9 @@ export const profile: Profile = {
     'Building AI-powered, fintech, and enterprise mobile platforms used by millions.',
   summary: [
     "I've spent my career at the intersection of mobile and backend: the kind of work where a bug isn't just annoying, it's someone's mortgage payment or bank transfer. I got my start as an iOS engineer at TCS, then spent 14 years moving up through lead and staff roles, building high-performing teams along the way — most recently as a founding mobile engineer at a FinTech startup, where I built the mobile, web, and API strategy from zero.",
-    "I'm just as comfortable on the backend — deep in Azure cloud architecture and distributed systems, building Kafka and RabbitMQ event pipelines that keep high-volume, regulated systems reliable at scale, and architecting push notification infrastructure from scratch that reaches 3 million customers. Lately I've been deep in agentic AI: designing MCP-based workflows that let LLMs make real, multi-step decisions across enterprise systems. I also lean hard on AI-assisted development day to day — Claude, OpenAI Codex, and GitHub Copilot are part of how I design, implement, test, and document, not just something I bolt on at the end.",
+    "I'm just as comfortable on the backend — deep in Azure cloud architecture and distributed systems, building Kafka and RabbitMQ event pipelines that keep high-volume, regulated systems reliable at scale, and architecting push notification infrastructure from scratch that reaches 3 million customers.",
+    "I've got a polyglot mindset: Express.js, Spring Boot, Salesforce/DocuSign integrations, Azure Bot Services — I pick the right stack for the problem rather than forcing everything through one.",
+    "Lately I've been deep in agentic AI: designing MCP-based workflows that let LLMs make real, multi-step decisions across enterprise systems. I also lean hard on AI-assisted development day to day — Claude, OpenAI Codex, and GitHub Copilot are part of how I design, implement, test, and document, not just something I bolt on at the end.",
     "I'm also a test-driven development purist — I'd rather write the test first and the feature second. It's not a checkbox for me; it's how I've built every team I've led, from raising unit test coverage across every team to the automation frameworks that back it up. I care a lot about the unglamorous stuff — test coverage, security, CI/CD — because that's what lets you move fast without breaking someone's finances.",
   ],
 }
@@ -187,6 +191,8 @@ export const projects: Project[] = [
       'Led a full mobile app and website rebrand as Principal Engineer, rebuilding UX and performance from the ground up.',
       'Designed and shipped core banking flows: Instant Transfers, Card Management, Transactions, and External Transfers.',
       'Architected Azure-based AI identity agents that improved verification accuracy and cut agent handling time.',
+      'Built a Microsoft Teams app on Azure Bot Services that sends one-time codes to verify customers live during support calls — a polyglot stack spanning Express.js, Spring Boot, Twilio, SendGrid, and SQL Server.',
+      'Integrated Salesforce with DocuSign to automate document generation and e-signature workflows for customer agreements.',
     ],
     impact: 'App Store rating climbed from 2.0 to 4.9 — a direct result of the rebuild.',
     tags: ['React Native', 'Azure', 'AI Agents'],
@@ -211,6 +217,7 @@ export const projects: Project[] = [
     impact: 'One codebase served 8 branded enterprise clients — new clients launched through configuration and Enterprise provisioning, not a rebuild.',
     tags: ['Objective-C', 'White-Label', 'iOS Enterprise', 'SQLite'],
     links: [],
+    image: '/projects/ivy-enterprise-ipad.png',
   },
   {
     title: 'Building a testing culture across mobile and web',
@@ -227,6 +234,7 @@ export const projects: Project[] = [
     impact: 'Grew unit test coverage from 52% to 80%+ at Elevate, and cut crashes and regressions across every team that adopted the practice.',
     tags: ['TDD', 'Jest', 'Detox', 'Maestro', 'Appium', 'Selenium'],
     links: [],
+    logos: ['/projects/testing-browserstack.png', '/projects/testing-saucelabs.png', '/projects/testing-lambdatest.png'],
   },
   {
     title: 'Teaching AI agents to run a supply chain',
@@ -242,6 +250,7 @@ export const projects: Project[] = [
     impact: 'Automated multi-step operational decisions that previously required manual review across distribution centers.',
     tags: ['MCP', 'LLM Tool-Calling', 'Kafka', 'Spring Boot'],
     links: [],
+    image: '/projects/ascendion-ai-agent.png',
   },
   {
     title: 'Confiora — family awareness, built solo',
@@ -298,11 +307,13 @@ export const experience: ExperienceItem[] = [
     role: 'Principal Software Engineer — Mobile',
     dates: 'Oct 2020 – Feb 2022',
     skills:
-      'React Native, TypeScript, Next.js, React, Express.js, Spring Boot, Azure, CI/CD, SendGrid, Twilio',
+      'React Native, TypeScript, Next.js, React, Express.js, Spring Boot, Azure, Azure Bot Services, CI/CD, SendGrid, Twilio, Salesforce, DocuSign',
     bullets: [
       'Led a full mobile app and website rebrand as Principal Engineer, raising App Store rating from 2.0 to 4.9.',
       'Built core banking flows: Instant Transfers, Transactions, Card Management, External Transfers.',
       'Architected Azure-based AI identity agents, improving verification accuracy and handling time.',
+      'Built a Teams app on Azure Bot Services for live customer OTP verification during support calls.',
+      'Integrated Salesforce with DocuSign to automate document generation and e-signature workflows.',
       'Led and mentored a team of junior developers.',
     ],
   },
@@ -366,13 +377,14 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: 'Backend & Data',
-    skills: ['Express.js', 'Spring Boot', 'NestJS', 'PostgreSQL', 'SQL Server', 'Prisma', 'GraphQL', 'REST APIs'],
+    skills: ['Express.js', 'Spring Boot', 'NestJS', 'PostgreSQL', 'SQL Server', 'Prisma', 'GraphQL', 'REST APIs', 'Salesforce', 'DocuSign'],
   },
   {
     category: 'Cloud & Infrastructure',
     skills: [
       'Azure',
       'Azure B2C',
+      'Azure Bot Services',
       'API Management',
       'Kafka',
       'RabbitMQ',
