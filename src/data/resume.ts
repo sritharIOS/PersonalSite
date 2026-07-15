@@ -265,7 +265,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'confiora',
-    title: 'Confiora — family awareness, built solo',
+    title: 'Building a privacy-first iOS product from scratch',
     company: 'Confiora — Independent Build',
     timeframe: 'Personal Project',
     problem:
