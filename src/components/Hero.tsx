@@ -2,7 +2,7 @@ import { profile, stats, primarySkills } from '../data/resume'
 
 export default function Hero() {
   return (
-    <section id="top" className="relative pt-24 pb-10 px-6 overflow-hidden">
+    <section id="top" className="relative pt-16 sm:pt-24 pb-10 px-6 overflow-hidden">
       <div
         className="absolute inset-0 -z-10 bg-grain"
         style={{ backgroundSize: '18px 18px' }}
